@@ -191,7 +191,7 @@ wilson_df = wilson_df |>
 
 wilson_plot = ggplot(wilson_df, aes(n,p)) +
   geom_raster(aes(fill = wilson))+
-  scale_fill_viridis_c() +
+  scale_fill_viridis_c(name = "MOE", limits = c(0, 10)) +
   xlab("Sample Size") +
   ylab("p value")
 

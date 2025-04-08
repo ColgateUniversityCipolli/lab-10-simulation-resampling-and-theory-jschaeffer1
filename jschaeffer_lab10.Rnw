@@ -53,12 +53,13 @@ Questions concerning margin of error stemmed from the Gallup polls article "\tex
 
 \section{Methods}
 
-My work was mainly focused on simulating or estimating data that could then be summarized with \texttt{tidyverse} to obtain more useful information \citep{tidyverse}. To first answer the question of doubling sample size, I ran two separate simulations of the binomial distribution under the assumption that Gallup polls produced an accurate p value. Although I could not use resampling to test a larger sample size than the given 1004, resampling was an effective way to compare the simulated margin of error to ensure that the given p value is a reasonable assumption. 
+My work was mainly focused on simulating or estimating data that could then be summarized with \texttt{tidyverse} and \texttt{patchwork} to obtain more useful information \citep{tidyverse,  patchwork}. To first answer the question of doubling sample size, I ran two separate simulations of the binomial distribution under the assumption that Gallup polls produced an accurate p value. Although I could not use resampling to test a larger sample size than the given 1004, resampling was an effective way to compare the simulated margin of error to ensure that the given p value is a reasonable assumption. 
 
 I tested the margin of error over numerous combinations of sample size and p value in the same way as my initial simulations, but scaled to include far more combinations of p and n values. I used a similar combination fo p and n values to test the margin of error calculated through the Wilson Estimate, so that I could compare the effect of sample size and p value on margin of error through both methods.
 
 \section{Results}
 
+To compare the margin of error of different sample sizes, I constructed Figure \ref{plot1}, which features a smaller range for the plot with a larger sample size. Figure \ref{plot1} contains data made with the assumption that $p=.39$ and simulating this data for different sample sizes. Calculation on the data reveals that a sample size of 1004 leads to a 3.0\% margin of error while a sample size of 2008 has a 2.1\% margin of error. 
 
 \begin{figure}[H]
  \begin{center}
@@ -68,6 +69,7 @@ I tested the margin of error over numerous combinations of sample size and p val
  \end{center}
  \end{figure}
 
+Calculating the same values using resampling of a sample size $n=1004$ yielded similar results in Figure \ref{plot2}. When resampling, I calculated a 2.9\% margin of error, nearly the same as the 3.0\% under the assumption that $p=.39$ is correct.
 
 \begin{figure}[H]
  \begin{center}
@@ -76,6 +78,8 @@ I tested the margin of error over numerous combinations of sample size and p val
  \label{plot2}
  \end{center}
  \end{figure}
+ 
+ Figures \ref{plot3} and \ref{plot4} showcase how margin of error changes dependent on samples size and p. Figure \ref{plot3} calculates MOE using simulations of the binomial distribution as was done for Figure \ref{plot1}. Figure \ref{plot4} calculates MOE through the Wilson Estimate instead. Although calculated through different methods, the results of both plots appear similar.
 
 \begin{figure}[H]
  \begin{center}
@@ -96,16 +100,8 @@ I tested the margin of error over numerous combinations of sample size and p val
 
 
 
-Tie together the Introduction -- where you introduce the problem at hand -- and the methods --  what you propose to do to answer the question. Present your data, the results of your analyses, and how each reported aspect contributes to answering the question. This section should include table(s), statistic(s), and graphical displays. Make sure to put the results in a sensible order and that each result contributes a logical and developed solution. It should not just be a list. Avoid being repetitive. 
-
-\subsection{Results Subsection}
-Subsections can be helpful for the Results section, too. This can be particularly helpful if you have different questions to answer. 
-
-
 \section{Discussion}
- You should objectively evaluate the evidence you found in the data. Do not embellish or wish-terpet (my made-up phase for making an interpretation you, or the researcher, wants to be true without the data \emph{actually} supporting it). Connect your findings to the existing information you provided in the Introduction.
 
-Finally, provide some concluding remarks that tie together the entire paper. Think of the last part of the results as abstract-like. Tell the reader what they just consumed -- what's the takeaway message?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
