@@ -1,4 +1,5 @@
 library(tidyverse)
+library(patchwork)
 
 ##########################################################
 #####             PART 1: BASIC SIMULATION          ######
@@ -14,9 +15,11 @@ part1_plot1 = ggplot() +
   geom_histogram(aes(part1.sample1, y=after_stat(density))) +
   geom_density(aes(part1.sample1)) + 
   geom_hline(yintercept=0) +
+  xlim(0.32, 0.45) +
   theme_bw() +
-  xlab("Percentage Satisfied with US") +
-  ylab("Density")
+  xlab("Percentage Calculated") +
+  ylab("Density") +
+  ggtitle("n=1004")
 
 #Making a summary to determine the upper and lower bounds
 sample1_summary = sample1_df |>
@@ -38,9 +41,11 @@ part1_plot2 = ggplot() +
   geom_histogram(aes(part1.sample2, y=after_stat(density))) +
   geom_density(aes(part1.sample2)) + 
   geom_hline(yintercept=0) +
+  xlim(0.32, 0.45) +
   theme_bw() +
-  xlab("Percentage Satisfied with US") +
-  ylab("Density")
+  xlab("Percentage Calculated") +
+  ylab("Density")+
+  ggtitle("n=2008")
 
 
 #Making a summary to determine the upper and lower bounds
@@ -51,6 +56,13 @@ sample2_summary = sample2_df |>
     MOE = (upper-lower)/2
   )
 #2.1% margin of error
+
+#Combining the two plots for comparison
+part1_comparison = (part1_plot1 | part1_plot2)
+
+#Saving the plot to be used in Sweave
+ggsave("part1_comparison.pdf", plot = part1_comparison, width = 6, height = 4)
+
 
 ##########################################################
 #####             PART 2: RESAMPLING                ######
@@ -79,8 +91,9 @@ resample_plot = ggplot() +
   geom_histogram(aes(resamples$p.hat, y=after_stat(density))) +
   geom_density(aes(resamples$p.hat)) + 
   geom_hline(yintercept=0) +
+  xlim(0.32, 0.45) +
   theme_bw() +
-  xlab("Percentage Satisfied with US") +
+  xlab("Percentage Calculated") +
   ylab("Density")
 
 #Checking what the 95% spread of the resamplings are
@@ -91,6 +104,10 @@ resample_summary = resamples |>
     MOE = (upper-lower)/2
   )
 #3% margin of error
+
+#Saving the plot to be used in Sweave
+ggsave("resample_plot.pdf", plot = resample_plot, width = 6, height = 4)
+
 
 ##########################################################
 #####       PART 3: SIMULATION OVER N AND P         ######
@@ -132,7 +149,10 @@ sim_plot = ggplot(sims_df, aes(n,p)) +
   geom_raster(aes(fill = MOE))+
   scale_fill_viridis_c() +
   xlab("Sample Size") +
-  ylab("Percentage Estimated")
+  ylab("p value")
+
+#Saving the plot to be used in Sweave
+ggsave("sim_moe.pdf", plot = sim_plot, width = 6, height = 4)
 
 
 ##########################################################
@@ -173,8 +193,10 @@ wilson_plot = ggplot(wilson_df, aes(n,p)) +
   geom_raster(aes(fill = wilson))+
   scale_fill_viridis_c() +
   xlab("Sample Size") +
-  ylab("Percentage Estimated")
+  ylab("p value")
 
+#Saving the plot to be used in Sweave
+ggsave("wilson_moe.pdf", plot = wilson_plot, width = 6, height = 4)
 
 
 
