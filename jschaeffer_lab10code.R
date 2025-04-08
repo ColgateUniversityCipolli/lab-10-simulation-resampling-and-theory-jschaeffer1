@@ -154,7 +154,10 @@ for(i in n){
   
   for (j in p){
     X = round(i*j) #Getting number of successes
-    wilson = (X+0.5*z^2)/(n+z^2) #Calculating wilson estimate
+    #wilson = ((z^2/i)+2*j)/(2*(1+(z^2/i))) #Calculating wilson estimate
+    wilson_num = sqrt(z^4/4+z^2*X-(z^2*X^2)/i)
+    wilson_denom = i+z^2
+    wilson = wilson_num/wilson_denom
     #Adding new row to tibble
     wilson_df = bind_rows(wilson_df, tibble(n=i, p=j, wilson=wilson))
   }
@@ -164,8 +167,9 @@ wilson_df = wilson_df |>
   mutate(wilson = wilson*100) |>
   mutate(p = p*100)
 
+#view(wilson_df)
 
-wilson_plot = ggplot(sims_df, aes(n,p)) +
+wilson_plot = ggplot(wilson_df, aes(n,p)) +
   geom_raster(aes(fill = wilson))+
   scale_fill_viridis_c() +
   xlab("Sample Size") +
