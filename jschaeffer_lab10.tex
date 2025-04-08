@@ -130,7 +130,7 @@ Calculating the same values using resampling of a sample size $n=1004$ yielded s
  \end{center}
  \end{figure}
  
- Figures \ref{plot3} and \ref{plot4} showcase how margin of error changes dependent on samples size and p. 
+ Figures \ref{plot3} and \ref{plot4} showcase how margin of error changes dependent on samples size and p. Figure \ref{plot3} calculates MOE using simulations of the binomial distribution as was done for Figure \ref{plot1}. Figure \ref{plot4} calculates MOE through the Wilson Estimate instead. Although calculated through different methods, the results of both plots appear similar.
 
 \begin{figure}[H]
  \begin{center}
@@ -152,10 +152,9 @@ Calculating the same values using resampling of a sample size $n=1004$ yielded s
 
 
 \section{Discussion}
- You should objectively evaluate the evidence you found in the data. Do not embellish or wish-terpet (my made-up phase for making an interpretation you, or the researcher, wants to be true without the data \emph{actually} supporting it). Connect your findings to the existing information you provided in the Introduction.
+Figures \ref{plot1}-\ref{plot4} demonstrate how margin of error changes within the binomial distribution. Importantly, Figure \ref{plot1} indicates that Gallup polls was incorrect in their assertion that doubling their sample size would halve the margin of error, instead decreasing by approximately 50\%. Figure \ref{plot2} reflects this contrast as well by suggesting through resampling that the margin of error of Gallup polls' data is 3\% instead of 4\%. 
 
-Finally, provide some concluding remarks that tie together the entire paper. Think of the last part of the results as abstract-like. Tell the reader what they just consumed -- what's the takeaway message?
-
+Figures \ref{plot3} and \ref{plot4} give us an even better idea about how margin of error is affected by sample size and p value. Changes to sample size appear to have the greatest effect when the sample size is low, but increasing sample sizes past 1000 do not appear to have noticeable changes to margin of error in either figure. This reaffirms what we saw in Figure \ref{plot1} that doubling sample size would not serve to halve margin of error. Further, Figures \ref{plot3} and \ref{plot4} demonstrate that margin of error changes more noticeably at p values close to 0.5, suggesting that there would be a relatively large change to margin of error for the given p value of 0.39. This suggests that the 1\% decrease to margin of error seen in Figure \ref{plot1} is large compared to how margin of error would change for a p value further from 0.5.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

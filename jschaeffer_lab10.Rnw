@@ -103,8 +103,7 @@ Calculating the same values using resampling of a sample size $n=1004$ yielded s
 \section{Discussion}
 Figures \ref{plot1}-\ref{plot4} demonstrate how margin of error changes within the binomial distribution. Importantly, Figure \ref{plot1} indicates that Gallup polls was incorrect in their assertion that doubling their sample size would halve the margin of error, instead decreasing by approximately 50\%. Figure \ref{plot2} reflects this contrast as well by suggesting through resampling that the margin of error of Gallup polls' data is 3\% instead of 4\%. 
 
-Figures \ref{plot3} and \ref{plot4} give us an even better idea about how margin of error is affected by sample size and p value. 
-
+Figures \ref{plot3} and \ref{plot4} give us an even better idea about how margin of error is affected by sample size and p value. Changes to sample size appear to have the greatest effect when the sample size is low, but increasing sample sizes past 1000 do not appear to have noticeable changes to margin of error in either figure. This reaffirms what we saw in Figure \ref{plot1} that doubling sample size would not serve to halve margin of error. Further, Figures \ref{plot3} and \ref{plot4} demonstrate that margin of error changes more noticeably at p values close to 0.5, suggesting that there would be a relatively large change to margin of error for the given p value of 0.39. This suggests that the 1\% decrease to margin of error seen in Figure \ref{plot1} is large compared to how margin of error would change for a p value further from 0.5.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
