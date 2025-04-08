@@ -34,7 +34,7 @@ part1.sample2 = rbinom(10000, 2008, .39)/2008
 sample2_df = tibble(value = part1.sample2)
 
 #Making a histogram with a superimposed density plot
-part1_plot1 = ggplot() + 
+part1_plot2 = ggplot() + 
   geom_histogram(aes(part1.sample2, y=after_stat(density))) +
   geom_density(aes(part1.sample2)) + 
   geom_hline(yintercept=0) +

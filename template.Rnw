@@ -27,13 +27,13 @@
 \title{Lab XX -- MATH 240 -- Computational Statistics}
 
 \author{
-  First Author \\
-  Affiliation  \\
-  Department  \\
-  {\tt email@domain}
+  Jack Schaeffer \\
+  Professor Cipolli  \\
+  Math 240  \\
+  {\tt jschaeffer@colgate.edu}
 }
 
-\date{}
+\date{April 8, 2025}
 
 \maketitle
 
@@ -41,6 +41,7 @@
 %\raggedcolumns % If your spacing gets messed up try uncommenting 
                 % this line
 \begin{abstract}
+
 This document provides a basic template for the 2-page labs we will complete each week. Here, briefly summarize what you did and why it might be helpful. Provide all the top-line conclusions, but avoid providing \emph{all} the details. Results should be limited to ``we show X, Y, and Z."
 \end{abstract}
 
