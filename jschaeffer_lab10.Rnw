@@ -53,13 +53,13 @@ Questions concerning margin of error stemmed from the Gallup polls article "\tex
 
 \section{Methods}
 
-My work was mainly focused on simulating or estimating data that could then be summarized with \texttt{tidyverse} and \texttt{patchwork} to obtain more useful information \citep{tidyverse,  patchwork}. To first answer the question of doubling sample size, I ran two separate simulations of the binomial distribution under the assumption that Gallup polls produced an accurate p value. Although I could not use resampling to test a larger sample size than the given 1004, resampling was an effective way to compare the simulated margin of error to ensure that the given p value is a reasonable assumption. 
+My work was mainly focused on simulating or estimating data that could then be summarized with \texttt{tidyverse} and \texttt{patchwork} to obtain more useful information \citep{tidyverse,  patchwork}. To first answer the question of doubling sample size, I ran two separate simulations of the binomial distribution under the assumption that Gallup polls produced an accurate p value $p=0.39$. Although I could not use resampling to test a larger sample size than the given 1004, resampling was an effective way to compare the simulated margin of error to ensure that the given p value is a reasonable assumption. 
 
 I tested the margin of error over numerous combinations of sample size and p value in the same way as my initial simulations, but scaled to include far more combinations of p and n values. I used a similar combination fo p and n values to test the margin of error calculated through the Wilson Estimate, so that I could compare the effect of sample size and p value on margin of error through both methods.
 
 \section{Results}
 
-To compare the margin of error of different sample sizes, I constructed Figure \ref{plot1}, which features a smaller range for the plot with a larger sample size. Figure \ref{plot1} contains data made with the assumption that $p=.39$ and simulating this data for different sample sizes. Calculation on the data reveals that a sample size of 1004 leads to a 3.0\% margin of error while a sample size of 2008 has a 2.1\% margin of error. 
+To compare the margin of error of different sample sizes, I constructed Figure \ref{plot1}, which demonstrates that a higher sample size reduces the range of estimates p values within my simulations. We can see this in Figure \ref{plot1} through the noticeably higher kurtosis in the plot with a sample size of 2008. Figure \ref{plot1} contains data made with the assumption that $p=.39$ and simulating this data for different sample sizes. Calculation on the data reveals that a sample size of 1004 leads to a 3.0\% margin of error while a sample size of 2008 has a 2.1\% margin of error. 
 
 \begin{figure}[H]
  \begin{center}
